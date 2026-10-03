@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+</head>
+<body>
+
+  <header>
+    <h1>John Doe - Web Developer</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Home</h2>
+      <p>Hello! Welcome to my portfolio. My name is Fouad Hammani and I build websites.</p>
+      <video controls width="400">
+        <source src="my-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a passionate web developer learning HTML, CSS and JavaScript. I love creating simple and clean websites.</p>
+      <h3>My Skills</h3>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Git and GitHub</li>
+      </ul>
+      <h3>My Hobbies</h3>
+      <audio controls>
+        <source src="my-audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+    </section>
+
+    <section id="work">
+      <h2>My Work</h2>
+      <p>Here are some projects I have worked on:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Description</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Project One</td>
+            <td>A simple landing page</td>
+            <td><a href="#home">View</a></td>
+          </tr>
+          <tr>
+            <td>Project Two</td>
+            <td>A calculator app</td>
+            <td><a href="#home">View</a></td>
+          </tr>
+          <tr>
+            <td>Project Three</td>
+            <td>A to-do list app</td>
+            <td><a href="#home">View</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="resume">
+      <h2>Original Portfolio on this link <a><link rel="stylesheet" href="https://fouja.github.io/Portfolio/"></a></h2>
+      <h3>Education</h3>
+      <ul>
+        <li>Msc Gomycode</li>
+        <li>Bachelor Diploma</li>
+      </ul>
+      <h3>Experience</h3>
+      <ul>
+        <li>Freelance Web Developer Exemple (2024 - Present)</li>
+        <li>Intern at Tech Company Exemple (2023)</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <label for="fullname">Full Name:</label><br>
+        <input type="text" id="fullname" name="fullname" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <label for="subject">Subject:</label><br>
+        <select id="subject" name="subject">
+          <option value="job">Job Offer</option>
+          <option value="question">Question</option>
+          <option value="other">Other</option>
+        </select><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" cols="40"></textarea><br><br>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Fouad Hammani. All rights reserved.</p>
+    <p>
+      <a href="#home">Home</a> |
+      <a href="#about">About</a> |
+      <a href="#work">Work</a> |
+      <a href="#resume">Resume</a> |
+      <a href="#contact">Contact</a>
+    </p>
+  </footer>
+
+</body>
+</html>

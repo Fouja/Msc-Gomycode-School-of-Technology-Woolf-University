@@ -1,0 +1,11 @@
+# Local git credentials -- never commit
+.gitconfig
+.gitcredentials
+.git-credentials
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
