@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Voyara | Travel Agency</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --sea: #0e7490;
+      --sea-dark: #0b4f5f;
+      --coral: #f97316;
+      --sand: #f8f7f4;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: #22333b; }
+    section[id], header[id] { scroll-margin-top: 72px; }
+
+    .bg-sea { background-color: var(--sea) !important; }
+    .bg-sea-dark { background-color: var(--sea-dark) !important; }
+    .bg-sand { background-color: var(--sand) !important; }
+    .text-coral { color: var(--coral) !important; }
+
+    .navbar-voyara { background: rgba(11, 79, 95, 0.95); backdrop-filter: blur(6px); }
+    .navbar-voyara .nav-link { color: rgba(255, 255, 255, 0.85); transition: color 0.2s; }
+    .navbar-voyara .nav-link:hover,
+    .navbar-voyara .nav-link.active { color: var(--coral); }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(5, 42, 52, 0.55), rgba(5, 42, 52, 0.55)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80") center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.25rem); font-weight: 800; }
+    .hero .divider { width: 80px; height: 3px; background: var(--coral); margin: 1rem auto; }
+
+    .btn-coral { background: var(--coral); border: 2px solid var(--coral); color: #fff; font-weight: 600; letter-spacing: 0.5px; }
+    .btn-coral:hover { background: #ea6c0a; border-color: #ea6c0a; color: #fff; }
+
+    .btn-outline-sea { border: 2px solid var(--sea); color: var(--sea); font-weight: 600; }
+    .btn-outline-sea:hover { background: var(--sea); border-color: var(--sea); color: #fff; }
+
+    .section-tag {
+      display: inline-block;
+      padding: 0.35rem 1.1rem;
+      border-radius: 2rem;
+      background: var(--sea);
+      color: #fff;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .destination-card {
+      border: none;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 0.5rem 1.5rem rgba(34, 51, 59, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .destination-card:hover { transform: translateY(-8px); box-shadow: 0 1rem 2.5rem rgba(34, 51, 59, 0.18); }
+    .destination-card img { height: 220px; width: 100%; object-fit: cover; }
+
+    .accordion-button { font-weight: 600; color: var(--sea-dark); }
+    .accordion-button:not(.collapsed) { background: var(--sea); color: #fff; }
+    .accordion-button:not(.collapsed) .tour-meta { color: rgba(255, 255, 255, 0.8); }
+    .accordion-button:focus { box-shadow: 0 0 0 0.2rem rgba(14, 116, 144, 0.2); }
+    .tour-meta { font-weight: 400; font-size: 0.9rem; color: #6c7a82; }
+    .accordion { border-radius: 1rem; overflow: hidden; }
+
+    .form-control:focus, .form-select:focus { border-color: var(--sea); box-shadow: 0 0 0 0.2rem rgba(14, 116, 144, 0.2); }
+    .contact-wrap { background: #fff; border-radius: 1rem; box-shadow: 0 0.75rem 2rem rgba(34, 51, 59, 0.12); }
+
+    .view-details-link { font-weight: 600; color: var(--sea); text-decoration: none; }
+    .view-details-link:hover { color: var(--coral); }
+
+    footer .social a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.75);
+      transition: color 0.2s, transform 0.2s;
+    }
+    footer .social a:hover { color: var(--coral); transform: translateY(-3px); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-voyara">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home"><i class="bi bi-globe-americas me-2 text-coral"></i>Voyara</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tours">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="container">
+      <p class="text-uppercase mb-2" style="letter-spacing: 4px;">Voyara Travel Agency</p>
+      <h1 class="mb-0">Explore the World, One Journey at a Time</h1>
+      <div class="divider"></div>
+      <p class="lead mb-4">
+        Hand-crafted tours to breathtaking destinations across the globe. Your next adventure starts here.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="#contact" class="btn btn-coral btn-lg px-4 py-2">Plan My Trip</a>
+        <a href="#destinations" class="btn btn-outline-light btn-lg px-4 py-2">Browse Destinations</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="destinations" class="py-5 bg-sand">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="section-tag">Destinations</span>
+        <h2 class="display-5 fw-bold mt-3 mb-2">Where Will You Go Next?</h2>
+        <p class="text-muted mx-auto" style="max-width: 620px;">
+          Three of our most-loved destinations, loved by thousands of travelers every year.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card destination-card h-100">
+            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=60"
+              class="card-img-top" alt="White-washed buildings overlooking the sea in Santorini, Greece">
+            <div class="card-body d-flex flex-column p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h5 card-title mb-0">Santorini, Greece</h3>
+                <span class="badge rounded-pill text-bg-warning"><i class="bi bi-star-fill"></i> 4.9</span>
+              </div>
+              <p class="card-text text-muted">
+                Famous whitewashed villages perched on volcanic cliffs, legendary sunsets over the
+                caldera, and hidden black-sand beaches waiting to be explored.
+              </p>
+              <div class="mt-auto">
+                <a href="#" class="btn btn-outline-sea w-100">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card destination-card h-100">
+            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=800&q=60"
+              class="card-img-top" alt="Red pagoda and Mount Fuji in Kyoto, Japan">
+            <div class="card-body d-flex flex-column p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h5 card-title mb-0">Kyoto, Japan</h3>
+                <span class="badge rounded-pill text-bg-warning"><i class="bi bi-star-fill"></i> 4.8</span>
+              </div>
+              <p class="card-text text-muted">
+                Serene temples, peaceful bamboo groves, and centuries-old tea houses in Japan's
+                beautiful ancient capital of culture and tradition.
+              </p>
+              <div class="mt-auto">
+                <a href="#" class="btn btn-outline-sea w-100">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card destination-card h-100">
+            <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=60"
+              class="card-img-top" alt="Temple on the lake in Bali, Indonesia">
+            <div class="card-body d-flex flex-column p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h5 card-title mb-0">Bali, Indonesia</h3>
+                <span class="badge rounded-pill text-bg-warning"><i class="bi bi-star-fill"></i> 4.9</span>
+              </div>
+              <p class="card-text text-muted">
+                Emerald rice terraces, sacred cliff-top temples, and world-class surfing on the
+                Island of the Gods. Relaxation and adventure in equal measure.
+              </p>
+              <div class="mt-auto">
+                <a href="#" class="btn btn-outline-sea w-100">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tours" class="py-5">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="section-tag">Tours</span>
+        <h2 class="display-5 fw-bold mt-3 mb-2">Featured Tour Packages</h2>
+        <p class="text-muted mx-auto" style="max-width: 620px;">
+          All packages include flights, hotels, local guides, and daily breakfast.
+        </p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <div class="accordion shadow-sm" id="toursAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#tourOne"
+                  aria-expanded="true" aria-controls="tourOne">
+                  European Explorer
+                  <span class="tour-meta ms-auto me-3 d-none d-sm-inline">10 days &middot; from $1,899</span>
+                </button>
+              </h2>
+              <div id="tourOne" class="accordion-collapse collapse show" data-bs-parent="#toursAccordion">
+                <div class="accordion-body">
+                  <p class="text-muted mb-2">
+                    Ten unforgettable days across Paris, Rome, and Barcelona. Enjoy a Seine river
+                    cruise, a Colosseum tour with a historian, and tapas evenings in the Gothic
+                    Quarter, all with a dedicated tour leader.
+                  </p>
+                  <p class="mb-3">
+                    <span class="badge text-bg-light border me-1"><i class="bi bi-geo-alt me-1 text-coral"></i>3 cities</span>
+                    <span class="badge text-bg-light border me-1"><i class="bi bi-building me-1 text-coral"></i>4-star hotels</span>
+                    <span class="badge text-bg-light border"><i class="bi bi-person-walking me-1 text-coral"></i>Guided tours</span>
+                  </p>
+                  <a href="#" class="view-details-link">View Details <i class="bi bi-arrow-right-short"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tourTwo"
+                  aria-expanded="false" aria-controls="tourTwo">
+                  Tropical Island Escape
+                  <span class="tour-meta ms-auto me-3 d-none d-sm-inline">7 days &middot; from $1,299</span>
+                </button>
+              </h2>
+              <div id="tourTwo" class="accordion-collapse collapse" data-bs-parent="#toursAccordion">
+                <div class="accordion-body">
+                  <p class="text-muted mb-2">
+                    A week of pure island life across Bali and Phuket. Sunrise yoga overlooking rice
+                    terraces, a traditional Balinese cooking class, and three days of beachside
+                    bliss at handpicked resorts.
+                  </p>
+                  <p class="mb-3">
+                    <span class="badge text-bg-light border me-1"><i class="bi bi-umbrella me-1 text-coral"></i>Beach stays</span>
+                    <span class="badge text-bg-light border me-1"><i class="bi bi-cup-hot me-1 text-coral"></i>Breakfast included</span>
+                    <span class="badge text-bg-light border"><i class="bi bi-water me-1 text-coral"></i>Snorkeling trip</span>
+                  </p>
+                  <a href="#" class="view-details-link">View Details <i class="bi bi-arrow-right-short"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tourThree"
+                  aria-expanded="false" aria-controls="tourThree">
+                  Highlights of Japan
+                  <span class="tour-meta ms-auto me-3 d-none d-sm-inline">9 days &middot; from $2,199</span>
+                </button>
+              </h2>
+              <div id="tourThree" class="accordion-collapse collapse" data-bs-parent="#toursAccordion">
+                <div class="accordion-body">
+                  <p class="text-muted mb-2">
+                    Nine days from the neon streets of Tokyo to the quiet temples of Kyoto and the
+                    street food markets of Osaka. Includes a bullet-train pass and a private tea
+                    ceremony experience.
+                  </p>
+                  <p class="mb-3">
+                    <span class="badge text-bg-light border me-1"><i class="bi bi-train-front me-1 text-coral"></i>Bullet train</span>
+                    <span class="badge text-bg-light border me-1"><i class="bi bi-cup-straw me-1 text-coral"></i>Tea ceremony</span>
+                    <span class="badge text-bg-light border"><i class="bi bi-map me-1 text-coral"></i>English-speaking guide</span>
+                  </p>
+                  <a href="#" class="view-details-link">View Details <i class="bi bi-arrow-right-short"></i></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tourFour"
+                  aria-expanded="false" aria-controls="tourFour">
+                  Machu Picchu & Sacred Valley
+                  <span class="tour-meta ms-auto me-3 d-none d-sm-inline">8 days &middot; from $1,599</span>
+                </button>
+              </h2>
+              <div id="tourFour" class="accordion-collapse collapse" data-bs-parent="#toursAccordion">
+                <div class="accordion-body">
+                  <p class="text-muted mb-2">
+                    Eight days through Peru's Sacred Valley with a sunrise visit to Machu Picchu, a
+                    homestay on Lake Titicaca, and authentic Andean cuisine in Cusco's lively
+                    markets.
+                  </p>
+                  <p class="mb-3">
+                    <span class="badge text-bg-light border me-1"><i class="bi bi-sunrise me-1 text-coral"></i>Sunrise entry</span>
+                    <span class="badge text-bg-light border me-1"><i class="bi bi-house-heart me-1 text-coral"></i>Local homestay</span>
+                    <span class="badge text-bg-light border"><i class="bi bi-binoculars me-1 text-coral"></i>Valley hikes</span>
+                  </p>
+                  <a href="#" class="view-details-link">View Details <i class="bi bi-arrow-right-short"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-5 bg-sand">
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-7">
+          <div class="contact-wrap p-4 p-md-5">
+            <div class="text-center mb-4">
+              <span class="section-tag">Contact</span>
+              <h2 class="fw-bold mt-3 mb-2">Start Planning Your Dream Trip</h2>
+              <p class="text-muted mb-0">Tell us where you want to go and we will design the perfect itinerary.</p>
+            </div>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="destination" class="form-label">Destination of Interest</label>
+                <select class="form-select" id="destination" required>
+                  <option value="" selected disabled>Choose a destination...</option>
+                  <option>Santorini, Greece</option>
+                  <option>Kyoto, Japan</option>
+                  <option>Bali, Indonesia</option>
+                  <option>Machu Picchu, Peru</option>
+                  <option>Not sure yet &mdash; surprise me!</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4"
+                  placeholder="Tell us about your dream trip, dates, budget, anything..." required></textarea>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-coral btn-lg">Send Inquiry</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-sea-dark text-white py-4">
+    <div class="container text-center">
+      <div class="social mb-3">
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      </div>
+      <p class="mb-1">&copy; 2026 Voyara Travel Agency. All rights reserved.</p>
+      <p class="mb-0 small text-white-50">hello@voyara.example &middot; +1 (555) 987-6543 &middot; 88 Horizon Ave, San Diego, CA</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

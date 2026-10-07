@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saveur | Fine Dining Restaurant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --wine: #7b1e26;
+      --wine-dark: #4a1014;
+      --gold: #c9a227;
+      --cream: #faf6f0;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: #2b2622; }
+    section[id], header[id] { scroll-margin-top: 72px; }
+
+    .bg-wine { background-color: var(--wine) !important; }
+    .bg-wine-dark { background-color: var(--wine-dark) !important; }
+    .bg-cream { background-color: var(--cream) !important; }
+    .text-gold { color: var(--gold) !important; }
+
+    .navbar-saveur { background: rgba(74, 16, 20, 0.95); backdrop-filter: blur(6px); }
+    .navbar-saveur .nav-link { color: rgba(255, 255, 255, 0.85); transition: color 0.2s; }
+    .navbar-saveur .nav-link:hover,
+    .navbar-saveur .nav-link.active { color: var(--gold); }
+
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(rgba(20, 8, 9, 0.6), rgba(20, 8, 9, 0.6)),
+        url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1600&q=80") center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 700; }
+    .hero .divider { width: 80px; height: 3px; background: var(--gold); margin: 1rem auto; }
+
+    .btn-gold { background: var(--gold); border: 2px solid var(--gold); color: var(--wine-dark); font-weight: 600; letter-spacing: 0.5px; }
+    .btn-gold:hover { background: #b18d1c; border-color: #b18d1c; color: #fff; }
+
+    .section-tag {
+      display: inline-block;
+      padding: 0.35rem 1.1rem;
+      border-radius: 2rem;
+      background: var(--wine);
+      color: #fff;
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .menu-card {
+      border: none;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 0.5rem 1.5rem rgba(43, 38, 34, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .menu-card:hover { transform: translateY(-8px); box-shadow: 0 1rem 2.5rem rgba(43, 38, 34, 0.16); }
+    .menu-card img { height: 200px; width: 100%; object-fit: cover; }
+    .price { color: var(--wine); font-weight: 700; }
+
+    .about-img { width: 100%; border-radius: 1rem; box-shadow: 0 1rem 2.5rem rgba(43, 38, 34, 0.2); }
+
+    .contact-wrap { background: #fff; border-radius: 1rem; box-shadow: 0 0.75rem 2rem rgba(43, 38, 34, 0.1); }
+    .form-control:focus { border-color: var(--gold); box-shadow: 0 0 0 0.2rem rgba(201, 162, 39, 0.25); }
+
+    footer .social a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.75);
+      transition: color 0.2s, transform 0.2s;
+    }
+    footer .social a:hover { color: var(--gold); transform: translateY(-3px); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-saveur">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home"><i class="bi bi-egg-fried me-2 text-gold"></i>Saveur</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero text-white">
+    <div class="container">
+      <p class="text-uppercase mb-2" style="letter-spacing: 4px;">Welcome to Saveur</p>
+      <h1 class="mb-0">A Culinary Journey Awaits</h1>
+      <div class="divider"></div>
+      <p class="lead mb-4">Seasonal ingredients, timeless recipes, unforgettable flavors.</p>
+      <a href="#menu" class="btn btn-gold btn-lg px-4 py-2">Explore Our Menu</a>
+    </div>
+  </header>
+
+  <section id="menu" class="py-5 bg-cream">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="section-tag">Our Menu</span>
+        <h2 class="display-5 fw-bold mt-3 mb-2">Dishes Made With Passion</h2>
+        <p class="text-muted mx-auto" style="max-width: 620px;">
+          Every plate is prepared from scratch each day by our award-winning kitchen team.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card menu-card h-100">
+            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=60"
+              class="card-img-top" alt="Grilled salmon fillet with roasted vegetables">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h5 card-title mb-0">Grilled Salmon</h3>
+                <span class="badge text-bg-warning">Chef's Special</span>
+              </div>
+              <p class="card-text text-muted">Atlantic salmon seared to perfection, served with lemon-herb butter and roasted seasonal vegetables.</p>
+              <p class="price fs-4 mb-0">$24</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card menu-card h-100">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=60"
+              class="card-img-top" alt="Creamy truffle mushroom pasta">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h5 card-title mb-0">Truffle Pasta</h3>
+              </div>
+              <p class="card-text text-muted">Handmade fettuccine tossed in a creamy truffle sauce with wild mushrooms and shaved parmesan.</p>
+              <p class="price fs-4 mb-0">$18</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card menu-card h-100">
+            <img src="https://images.unsplash.com/photo-1600891964092-4316c28d032e?auto=format&fit=crop&w=800&q=60"
+              class="card-img-top" alt="Ribeye steak with garlic butter">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h5 card-title mb-0">Ribeye Steak</h3>
+              </div>
+              <p class="card-text text-muted">Prime 12 oz ribeye grilled over open flame, finished with garlic butter and rosemary potatoes.</p>
+              <p class="price fs-4 mb-0">$32</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card menu-card h-100">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=60"
+              class="card-img-top" alt="Margherita pizza with fresh basil">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h5 card-title mb-0">Margherita Pizza</h3>
+              </div>
+              <p class="card-text text-muted">Stone-baked pizza topped with San Marzano tomatoes, fresh mozzarella, and garden basil.</p>
+              <p class="price fs-4 mb-0">$14</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card menu-card h-100">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=60"
+              class="card-img-top" alt="Fresh Caesar salad in a bowl">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h5 card-title mb-0">Caesar Salad</h3>
+              </div>
+              <p class="card-text text-muted">Crisp romaine lettuce, parmesan crisps, and house-made Caesar dressing with sourdough croutons.</p>
+              <p class="price fs-4 mb-0">$11</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card menu-card h-100">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=60"
+              class="card-img-top" alt="Berry cheesecake with fresh berries">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <h3 class="h5 card-title mb-0">Berry Cheesecake</h3>
+                <span class="badge text-bg-warning">New</span>
+              </div>
+              <p class="card-text text-muted">New York-style cheesecake crowned with a mixed berry compote and fresh mint.</p>
+              <p class="price fs-4 mb-0">$9</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-5">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-12 col-lg-6">
+          <img class="about-img"
+            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=70"
+            alt="Inside the Saveur dining room">
+        </div>
+        <div class="col-12 col-lg-6">
+          <span class="section-tag">About Us</span>
+          <h2 class="display-6 fw-bold mt-3 mb-3">Where Every Meal Tells a Story</h2>
+          <p class="text-muted">
+            Founded in 2012 by chef Amelie Laurent, Saveur began as a small family kitchen with one
+            simple belief: food is memory. Today, our candle-lit dining room welcomes guests from all
+            over the city to enjoy dishes inspired by French countryside cooking with a modern twist.
+          </p>
+          <p class="text-muted">
+            We work directly with local farmers and fishermen to source the freshest seasonal
+            ingredients, and every sauce, bread, and dessert is made in-house, from scratch, every
+            single day.
+          </p>
+          <ul class="list-unstyled d-grid gap-2 my-4">
+            <li><i class="bi bi-award-fill me-2 text-gold"></i> Award-winning head chef</li>
+            <li><i class="bi bi-basket-fill me-2 text-gold"></i> Farm-to-table seasonal ingredients</li>
+            <li><i class="bi bi-people-fill me-2 text-gold"></i> Warm, family-friendly atmosphere</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline-dark px-4">Reserve a Table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-5 bg-cream">
+    <div class="container py-4">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-7">
+          <div class="contact-wrap p-4 p-md-5">
+            <div class="text-center mb-4">
+              <span class="section-tag">Contact</span>
+              <h2 class="fw-bold mt-3 mb-2">Book a Table or Say Hello</h2>
+              <p class="text-muted mb-0">We usually reply within 24 hours.</p>
+            </div>
+            <form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4"
+                  placeholder="Tell us when you would like to visit or ask us anything..." required></textarea>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-gold btn-lg">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-wine-dark text-white py-4">
+    <div class="container text-center">
+      <div class="social mb-3">
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+        <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+      </div>
+      <p class="mb-1">&copy; 2026 Saveur. All rights reserved.</p>
+      <p class="mb-0 small text-white-50">12 Orchard Lane &middot; +1 (555) 123-4567 &middot; Open daily 11am&ndash;11pm</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
