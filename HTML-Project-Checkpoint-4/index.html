@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My Portfolio</title>
-</head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
 <body>
 
-  <header>
-    <h1>John Doe - Web Developer</h1>
-    <nav>
+  <header class="site-header">
+    <h1 class="site-title">Fouad Hammani - Web Developer</h1>
+    <nav class="navbar">
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -20,36 +21,36 @@
   </header>
 
   <main>
-    <section id="home">
+    <section id="home" class="section">
       <h2>Home</h2>
       <p>Hello! Welcome to my portfolio. My name is Fouad Hammani and I build websites.</p>
-      <video controls width="400">
+      <video class="home-video" controls width="400">
         <source src="my-video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </section>
 
-    <section id="about">
+    <section id="about" class="section">
       <h2>About Me</h2>
       <p>I am a passionate web developer learning HTML, CSS and JavaScript. I love creating simple and clean websites.</p>
       <h3>My Skills</h3>
-      <ul>
+      <ul class="skills-list">
         <li>HTML</li>
         <li>CSS</li>
         <li>JavaScript</li>
         <li>Git and GitHub</li>
       </ul>
       <h3>My Hobbies</h3>
-      <audio controls>
+      <audio class="hobby-audio" controls>
         <source src="my-audio.mp3" type="audio/mpeg">
         Your browser does not support the audio tag.
       </audio>
     </section>
 
-    <section id="work">
+    <section id="work" class="section">
       <h2>My Work</h2>
       <p>Here are some projects I have worked on:</p>
-      <table>
+      <table class="work-table">
         <thead>
           <tr>
             <th>Project</th>
@@ -77,23 +78,23 @@
       </table>
     </section>
 
-    <section id="resume">
+    <section id="resume" class="section">
       <h2>Original Portfolio on this link <a><link rel="stylesheet" href="https://fouja.github.io/Portfolio/"></a></h2>
       <h3>Education</h3>
-      <ul>
+      <ul class="edu-list">
         <li>Msc Gomycode</li>
         <li>Bachelor Diploma</li>
       </ul>
       <h3>Experience</h3>
-      <ul>
+      <ul class="exp-list">
         <li>Freelance Web Developer Exemple (2024 - Present)</li>
         <li>Intern at Tech Company Exemple (2023)</li>
       </ul>
     </section>
 
-    <section id="contact">
+    <section id="contact" class="section">
       <h2>Contact Me</h2>
-      <form>
+      <form class="contact-form">
         <label for="fullname">Full Name:</label><br>
         <input type="text" id="fullname" name="fullname" required><br><br>
 
@@ -118,7 +119,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <p>&copy; 2026 Fouad Hammani. All rights reserved.</p>
     <p>
       <a href="#home">Home</a> |
