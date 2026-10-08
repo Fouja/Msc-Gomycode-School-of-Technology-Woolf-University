@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gadget Zone | Online Store</title>
+
+  <!-- Bootstrap CDN  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- My stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1 class="logo">Gadget<span>Zone</span></h1>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="banner">
+    <div class="banner-content">
+      <h2>Big Tech Deals</h2>
+      <p>Up to 50% off on headphones, smart watches, speakers and more.</p>
+      <a href="#products" class="btn-shop">Shop Now</a>
+    </div>
+  </section>
+
+  <section id="products" class="products">
+    <h2 class="section-title">Our Products</h2>
+    <p class="section-text">Here are our best sellers this month.</p>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <span class="badge bg-danger">-30%</span>
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=60" alt="Wireless headphones">
+        <h3>Wireless Headphones</h3>
+        <p class="description">Over-ear headphones with deep bass and 30 hours of battery life.</p>
+        <p class="price">$59.99</p>
+        <a href="#" class="btn-shop">Shop Now</a>
+      </div>
+
+      <div class="product-card">
+        <span class="badge bg-success">New</span>
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=60" alt="Smart watch">
+        <h3>Smart Watch</h3>
+        <p class="description">Tracks your steps, heart rate and sleep. Compatible with Android and iOS.</p>
+        <p class="price">$89.99</p>
+        <a href="#" class="btn-shop">Shop Now</a>
+      </div>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=60" alt="Bluetooth speaker">
+        <h3>Bluetooth Speaker</h3>
+        <p class="description">Small water-resistant speaker with a big sound. Perfect for travel.</p>
+        <p class="price">$39.99</p>
+        <a href="#" class="btn-shop">Shop Now</a>
+      </div>
+
+      <div class="product-card">
+        <span class="badge bg-danger">-20%</span>
+        <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=600&q=60" alt="Mechanical gaming keyboard">
+        <h3>Gaming Keyboard</h3>
+        <p class="description">RGB mechanical keyboard with very smooth keys, great for gaming.</p>
+        <p class="price">$79.99</p>
+        <a href="#" class="btn-shop">Shop Now</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2 class="section-title">About Us</h2>
+    <p>Gadget Zone is an online store founded in 2021 by three friends who love technology.
+      Our mission is simple: sell the best gadgets at fair prices and deliver them fast.
+      Every product on this page is tested by our team before it goes on sale.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-text">Have a question about a product or your order? Send us a message.</p>
+
+    <form class="contact-form">
+      <div class="mb-3">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control" id="message" rows="4" placeholder="Write your message..." required></textarea>
+      </div>
+      <button type="submit" class="btn-shop">Send Message</button>
+    </form>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Gadget Zone. All rights reserved.</p>
+    <p class="footer-links">
+      <a href="#home">Home</a> |
+      <a href="#products">Products</a> |
+      <a href="#about">About</a> |
+      <a href="#contact">Contact</a>
+    </p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
