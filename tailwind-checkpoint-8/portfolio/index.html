@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fouja Nazgul | Frontend Developer</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#101820",
+            mint: "#14b8a6"
+          },
+          fontFamily: {
+            display: ["Poppins", "sans-serif"],
+            body: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-slate-50 font-body text-slate-700 antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+      <a href="#home" class="font-display text-xl font-bold tracking-tight text-ink">
+        Fouja<span class="text-mint">.</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden items-center gap-8 text-sm font-medium md:flex">
+        <a href="#home" class="text-ink transition hover:text-mint">Home</a>
+        <a href="#skills" class="text-slate-500 transition hover:text-mint">Skills</a>
+        <a href="#projects" class="text-slate-500 transition hover:text-mint">Projects</a>
+        <a href="#contact" class="rounded-full bg-ink px-5 py-2 text-white transition hover:bg-mint">Contact</a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="rounded-md p-2 text-ink md:hidden" aria-label="Open menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav id="mobileMenu" class="hidden border-t border-slate-200 bg-white px-5 py-4 md:hidden">
+      <div class="flex flex-col gap-4 text-sm font-medium">
+        <a href="#home" class="text-ink">Home</a>
+        <a href="#skills" class="text-slate-500">Skills</a>
+        <a href="#projects" class="text-slate-500">Projects</a>
+        <a href="#contact" class="text-slate-500">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative flex min-h-[90vh] items-center bg-ink bg-cover bg-center text-white"
+    style="background-image: linear-gradient(rgba(16, 24, 32, 0.78), rgba(16, 24, 32, 0.88)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80');">
+    <div class="mx-auto w-full max-w-6xl px-5 py-24">
+      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-mint">Hello, I&rsquo;m Fouja</p>
+      <h1 class="max-w-3xl font-display text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+        I build clean and friendly websites with Tailwind CSS.
+      </h1>
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
+        A frontend developer from Ghana who enjoys turning simple ideas into responsive,
+        easy-to-use pages. Currently learning, building and sharing every step of the journey.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a href="#projects" class="rounded-full bg-mint px-7 py-3 text-sm font-semibold text-ink transition hover:bg-white">
+          See my work
+        </a>
+        <a href="#contact" class="rounded-full border border-white/40 px-7 py-3 text-sm font-semibold text-white transition hover:border-mint hover:text-mint">
+          Let&rsquo;s talk
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="bg-white py-20">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="mb-12 max-w-2xl">
+        <p class="text-sm font-semibold uppercase tracking-widest text-mint">What I use</p>
+        <h2 class="mt-2 font-display text-3xl font-bold text-ink sm:text-4xl">Skills &amp; tools</h2>
+        <p class="mt-3 text-slate-500">
+          These are the tools I reach for most often when I&rsquo;m building a new page.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-mint hover:shadow-lg">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-orange-100 text-lg font-bold text-orange-600">H5</div>
+          <h3 class="font-display font-semibold text-ink">HTML5</h3>
+          <p class="mt-1 text-sm text-slate-500">Semantic, accessible markup.</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-mint hover:shadow-lg">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-lg font-bold text-blue-600">CSS</div>
+          <h3 class="font-display font-semibold text-ink">CSS3</h3>
+          <p class="mt-1 text-sm text-slate-500">Layouts, flexbox and animation.</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-mint hover:shadow-lg">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-yellow-100 text-lg font-bold text-yellow-600">JS</div>
+          <h3 class="font-display font-semibold text-ink">JavaScript</h3>
+          <p class="mt-1 text-sm text-slate-500">Small interactions and logic.</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-mint hover:shadow-lg">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-100 text-lg font-bold text-cyan-600">TW</div>
+          <h3 class="font-display font-semibold text-ink">Tailwind CSS</h3>
+          <p class="mt-1 text-sm text-slate-500">Utility-first responsive design.</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-mint hover:shadow-lg">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-100 text-lg font-bold text-emerald-600">BS</div>
+          <h3 class="font-display font-semibold text-ink">Bootstrap</h3>
+          <p class="mt-1 text-sm text-slate-500">Quick components and grids.</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-mint hover:shadow-lg">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-violet-100 text-lg font-bold text-violet-600">GIT</div>
+          <h3 class="font-display font-semibold text-ink">Git &amp; GitHub</h3>
+          <p class="mt-1 text-sm text-slate-500">Version control and teamwork.</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-mint hover:shadow-lg">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-pink-100 text-lg font-bold text-pink-600">UX</div>
+          <h3 class="font-display font-semibold text-ink">UI / UX</h3>
+          <p class="mt-1 text-sm text-slate-500">Simple and clear interfaces.</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:border-mint hover:shadow-lg">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-slate-200 text-lg font-bold text-slate-700">RE</div>
+          <h3 class="font-display font-semibold text-ink">React</h3>
+          <p class="mt-1 text-sm text-slate-500">Learning components and state.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="bg-slate-100 py-20">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="mb-12 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div class="max-w-xl">
+          <p class="text-sm font-semibold uppercase tracking-widest text-mint">Selected work</p>
+          <h2 class="mt-2 font-display text-3xl font-bold text-ink sm:text-4xl">Recent projects</h2>
+        </div>
+        <p class="text-sm text-slate-500">A few pages I built while practising.</p>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <article class="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=70"
+            alt="Headphones on a yellow background" class="h-48 w-full object-cover">
+          <div class="p-6">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-mint">Bootstrap</p>
+            <h3 class="font-display text-lg font-semibold text-ink">Gadget Zone Store</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-500">
+              A simple online store with a product grid, discount badges and a contact form.
+            </p>
+            <a href="../../bootstrap-Store-checkpoint-6/restaurant/index.html" class="mt-4 inline-block text-sm font-semibold text-ink hover:text-mint">
+              View project &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=70"
+            alt="Restaurant table setting" class="h-48 w-full object-cover">
+          <div class="p-6">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-mint">Landing page</p>
+            <h3 class="font-display text-lg font-semibold text-ink">Saveur Restaurant</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-500">
+              A warm restaurant landing page with a full-screen hero, menu cards and a booking section.
+            </p>
+            <a href="../../bootstrap-Store-checkpoint-6/restaurant/index.html" class="mt-4 inline-block text-sm font-semibold text-ink hover:text-mint">
+              View project &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=70"
+            alt="Travel map and camera" class="h-48 w-full object-cover">
+          <div class="p-6">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-mint">Travel</p>
+            <h3 class="font-display text-lg font-semibold text-ink">Wander Travel Agency</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-500">
+              A travel agency page focused on big photos, destination cards and a clear call to action.
+            </p>
+            <a href="../../bootstrap-Store-checkpoint-6/travel-agency/index.html" class="mt-4 inline-block text-sm font-semibold text-ink hover:text-mint">
+              View project &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=70"
+            alt="Code on a computer screen" class="h-48 w-full object-cover">
+          <div class="p-6">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-mint">HTML / CSS</p>
+            <h3 class="font-display text-lg font-semibold text-ink">Portfolio Website</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-500">
+              The first version of this portfolio, built with plain HTML and a stylesheet.
+            </p>
+            <a href="../../Checkpoint-1.html" class="mt-4 inline-block text-sm font-semibold text-ink hover:text-mint">
+              View project &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=70"
+            alt="Person paying with a card" class="h-48 w-full object-cover">
+          <div class="p-6">
+            <p class="mb-2 text-xs font-semibold uppercase tracking-wider text-mint">Store UI</p>
+            <h3 class="font-display text-lg font-semibold text-ink">Store Browser</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-500">
+              A store browsing layout with categories, product shelves and a mobile-friendly header.
+            </p>
+            <a href="../../store-landing-page-checkpoint-7/index.html" class="mt-4 inline-block text-sm font-semibold text-ink hover:text-mint">
+              View project &rarr;
+            </a>
+          </div>
+        </article>
+
+        <article class="flex items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 p-6 text-center">
+          <div>
+            <p class="font-display text-4xl font-bold text-slate-300">+</p>
+            <h3 class="mt-2 font-display text-lg font-semibold text-ink">More coming soon</h3>
+            <p class="mt-2 text-sm text-slate-500">I&rsquo;m always working on something new.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="bg-white py-20">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="grid gap-10 lg:grid-cols-2 lg:gap-16">
+
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-widest text-mint">Say hello</p>
+          <h2 class="mt-2 font-display text-3xl font-bold text-ink sm:text-4xl">Let&rsquo;s work together</h2>
+          <p class="mt-4 max-w-md leading-relaxed text-slate-500">
+            Do you have a small project, an internship or just a question? Send me a message
+            and I&rsquo;ll get back to you as soon as I can.
+          </p>
+
+          <div class="mt-8 space-y-4 text-sm">
+            <p class="flex items-center gap-3 text-slate-600">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-mint">@</span>
+              hello@fouja.dev
+            </p>
+            <p class="flex items-center gap-3 text-slate-600">
+              <span class="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 text-mint">GH</span>
+              Accra, Ghana
+            </p>
+          </div>
+        </div>
+
+        <form class="rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div class="sm:col-span-1">
+              <label for="name" class="mb-2 block text-sm font-medium text-ink">Your name</label>
+              <input id="name" name="name" type="text" placeholder="Ama Mensah"
+                class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-mint focus:ring-2 focus:ring-mint/30" required>
+            </div>
+
+            <div class="sm:col-span-1">
+              <label for="email" class="mb-2 block text-sm font-medium text-ink">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com"
+                class="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-mint focus:ring-2 focus:ring-mint/30" required>
+            </div>
+
+            <div class="sm:col-span-2">
+              <label for="message" class="mb-2 block text-sm font-medium text-ink">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me a little about your idea..."
+                class="w-full resize-none rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-mint focus:ring-2 focus:ring-mint/30" required></textarea>
+            </div>
+          </div>
+
+          <button type="submit"
+            class="mt-6 w-full rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:bg-mint hover:text-ink sm:w-auto">
+            Send message
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-ink py-10 text-slate-400">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-5 sm:flex-row">
+      <p class="text-sm">&copy; 2026 Fouja Nazgul. All rights reserved.</p>
+
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/Fouja" aria-label="GitHub"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-mint hover:text-ink">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.83.58A12 12 0 0 0 12 .5Z"/>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="LinkedIn"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-mint hover:text-ink">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.7 8.65 22 10.7 22 14.1V21h-4v-6.1c0-1.46-.03-3.34-2.04-3.34-2.04 0-2.35 1.6-2.35 3.24V21H9V9Z"/>
+          </svg>
+        </a>
+
+        <a href="#" aria-label="X"
+          class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-mint hover:text-ink">
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.23l-4.88-6.38L6.5 22H3.35l7.24-8.28L1 2h6.38l4.42 5.84L18.9 2Zm-1.1 17.84h1.73L7.28 5.08H5.43L17.8 19.84Z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple mobile menu toggle
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = !mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      menuBtn.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    // Close the menu when a link is clicked
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+  </script>
+
+</body>
+</html>

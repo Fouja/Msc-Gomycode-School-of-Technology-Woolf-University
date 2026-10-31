@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dev Journal | Notes on frontend and design</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: "#fdfbf7",
+            cocoa: "#2f2a25",
+            rust: "#c2410c",
+            sand: "#efe7db"
+          },
+          fontFamily: {
+            serif: ["Fraunces", "Georgia", "serif"],
+            sans: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-paper font-sans text-cocoa antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-sand bg-paper/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+      <a href="#top" class="group flex items-center gap-2">
+        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-rust font-serif text-lg font-bold text-white">D</span>
+        <span class="font-serif text-xl font-semibold tracking-tight">The Dev Journal</span>
+      </a>
+
+      <nav class="hidden items-center gap-7 text-sm font-medium md:flex">
+        <a href="#top" class="transition hover:text-rust">Home</a>
+        <a href="#featured" class="text-cocoa/60 transition hover:text-rust">Featured</a>
+        <a href="#categories" class="text-cocoa/60 transition hover:text-rust">Categories</a>
+        <a href="#recent" class="text-cocoa/60 transition hover:text-rust">Recent posts</a>
+        <a href="#newsletter" class="rounded-full bg-cocoa px-5 py-2 text-white transition hover:bg-rust">Subscribe</a>
+      </nav>
+
+      <button id="menuBtn" class="rounded-md p-2 md:hidden" aria-label="Open menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <nav id="mobileMenu" class="hidden border-t border-sand bg-paper px-5 py-4 md:hidden">
+      <div class="flex flex-col gap-4 text-sm font-medium">
+        <a href="#top">Home</a>
+        <a href="#featured" class="text-cocoa/60">Featured</a>
+        <a href="#categories" class="text-cocoa/60">Categories</a>
+        <a href="#recent" class="text-cocoa/60">Recent posts</a>
+        <a href="#newsletter" class="text-rust">Subscribe</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Intro / brand strip -->
+  <section id="top" class="border-b border-sand bg-sand/40">
+    <div class="mx-auto max-w-6xl px-5 py-14 sm:py-20">
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-rust">A small online journal</p>
+      <h1 class="mt-3 max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+        Notes on building for the web, one small lesson at a time.
+      </h1>
+      <p class="mt-5 max-w-xl leading-relaxed text-cocoa/60">
+        I write about frontend development, Tailwind CSS, design decisions and the things
+        I learn while working on real projects. No long essays, just useful notes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured posts -->
+  <section id="featured" class="py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="mb-10 flex items-end justify-between gap-4">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-rust">Editor&rsquo;s pick</p>
+          <h2 class="mt-2 font-serif text-3xl font-semibold sm:text-4xl">Featured posts</h2>
+        </div>
+        <a href="#" class="hidden text-sm font-medium text-cocoa/60 underline decoration-rust/40 underline-offset-4 hover:text-rust sm:block">
+          View all posts
+        </a>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-3">
+
+        <article class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-sand transition hover:-translate-y-1 hover:shadow-lg">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=70"
+              alt="Laptop and notebook on a wooden desk"
+              class="h-52 w-full object-cover transition duration-500 group-hover:scale-105">
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <span class="w-fit rounded-full bg-sand px-3 py-1 text-xs font-semibold uppercase tracking-wider text-rust">CSS</span>
+            <h3 class="mt-4 font-serif text-xl font-semibold leading-snug">
+              <a href="#" class="hover:text-rust">Why utility classes finally made CSS click for me</a>
+            </h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-cocoa/60">
+              For years my stylesheets grew faster than my pages. Here is how thinking in small
+              utilities changed the way I build layouts.
+            </p>
+            <div class="mt-5 flex items-center justify-between text-xs text-cocoa/50">
+              <span>Fouja Nazgul</span>
+              <span>Oct 12, 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-sand transition hover:-translate-y-1 hover:shadow-lg">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=70"
+              alt="Code displayed on a dark screen"
+              class="h-52 w-full object-cover transition duration-500 group-hover:scale-105">
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <span class="w-fit rounded-full bg-sand px-3 py-1 text-xs font-semibold uppercase tracking-wider text-rust">JavaScript</span>
+            <h3 class="mt-4 font-serif text-xl font-semibold leading-snug">
+              <a href="#" class="hover:text-rust">A tiny mobile menu with plain JavaScript</a>
+            </h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-cocoa/60">
+              No framework needed. This short walkthrough shows how to open and close a menu
+              while keeping the accessibility basics in place.
+            </p>
+            <div class="mt-5 flex items-center justify-between text-xs text-cocoa/50">
+              <span>Fouja Nazgul</span>
+              <span>Oct 6, 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-sand transition hover:-translate-y-1 hover:shadow-lg">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=900&q=70"
+              alt="Design sketches and a laptop"
+              class="h-52 w-full object-cover transition duration-500 group-hover:scale-105">
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <span class="w-fit rounded-full bg-sand px-3 py-1 text-xs font-semibold uppercase tracking-wider text-rust">Design</span>
+            <h3 class="mt-4 font-serif text-xl font-semibold leading-snug">
+              <a href="#" class="hover:text-rust">Designing a page before writing a single class</a>
+            </h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-cocoa/60">
+              A quick look at the small sketching habit that helps me plan spacing, hierarchy
+              and mobile layouts before touching code.
+            </p>
+            <div class="mt-5 flex items-center justify-between text-xs text-cocoa/50">
+              <span>Fouja Nazgul</span>
+              <span>Sep 28, 2026</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories" class="border-y border-sand bg-white py-14">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-rust">Browse by topic</p>
+          <h2 class="mt-2 font-serif text-3xl font-semibold">Categories</h2>
+        </div>
+        <p class="max-w-sm text-sm text-cocoa/60">
+          Pick a topic that interests you. New notes are added every other week.
+        </p>
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#" class="rounded-full bg-rust px-5 py-2 text-sm font-medium text-white transition hover:bg-cocoa">
+          All posts <span class="ml-1 text-xs text-white/70">24</span>
+        </a>
+        <a href="#" class="rounded-full border border-sand bg-paper px-5 py-2 text-sm font-medium transition hover:border-rust hover:text-rust">
+          HTML &amp; CSS <span class="ml-1 text-xs text-cocoa/40">8</span>
+        </a>
+        <a href="#" class="rounded-full border border-sand bg-paper px-5 py-2 text-sm font-medium transition hover:border-rust hover:text-rust">
+          Tailwind CSS <span class="ml-1 text-xs text-cocoa/40">6</span>
+        </a>
+        <a href="#" class="rounded-full border border-sand bg-paper px-5 py-2 text-sm font-medium transition hover:border-rust hover:text-rust">
+          JavaScript <span class="ml-1 text-xs text-cocoa/40">5</span>
+        </a>
+        <a href="#" class="rounded-full border border-sand bg-paper px-5 py-2 text-sm font-medium transition hover:border-rust hover:text-rust">
+          Design <span class="ml-1 text-xs text-cocoa/40">3</span>
+        </a>
+        <a href="#" class="rounded-full border border-sand bg-paper px-5 py-2 text-sm font-medium transition hover:border-rust hover:text-rust">
+          Career <span class="ml-1 text-xs text-cocoa/40">2</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent posts -->
+  <section id="recent" class="py-16 sm:py-20">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="grid gap-12 lg:grid-cols-[1.6fr_1fr] lg:gap-16">
+
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-rust">Fresh from the notebook</p>
+          <h2 class="mt-2 font-serif text-3xl font-semibold sm:text-4xl">Recent posts</h2>
+
+          <div class="mt-8 divide-y divide-sand">
+            <article class="group flex gap-5 py-6 first:pt-0">
+              <div class="hidden h-20 w-28 shrink-0 overflow-hidden rounded-xl sm:block">
+                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=70"
+                  alt="Code on a screen" class="h-full w-full object-cover">
+              </div>
+              <div class="flex-1">
+                <p class="text-xs font-medium uppercase tracking-wider text-cocoa/40">Oct 20, 2026 &middot; 4 min read</p>
+                <h3 class="mt-2 font-serif text-lg font-semibold leading-snug group-hover:text-rust">
+                  <a href="#">Writing HTML that other people can actually read</a>
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-cocoa/60">
+                  Small habits around naming, indentation and comments that make a file easier to come back to.
+                </p>
+              </div>
+            </article>
+
+            <article class="group flex gap-5 py-6">
+              <div class="hidden h-20 w-28 shrink-0 overflow-hidden rounded-xl sm:block">
+                <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=400&q=70"
+                  alt="Notebook and pen on a desk" class="h-full w-full object-cover">
+              </div>
+              <div class="flex-1">
+                <p class="text-xs font-medium uppercase tracking-wider text-cocoa/40">Oct 17, 2026 &middot; 3 min read</p>
+                <h3 class="mt-2 font-serif text-lg font-semibold leading-snug group-hover:text-rust">
+                  <a href="#">A simple checklist before every page goes live</a>
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-cocoa/60">
+                  The five small checks I run for spacing, contrast, links and mobile behaviour.
+                </p>
+              </div>
+            </article>
+
+            <article class="group flex gap-5 py-6">
+              <div class="hidden h-20 w-28 shrink-0 overflow-hidden rounded-xl sm:block">
+                <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=400&q=70"
+                  alt="Laptop with code in a dark room" class="h-full w-full object-cover">
+              </div>
+              <div class="flex-1">
+                <p class="text-xs font-medium uppercase tracking-wider text-cocoa/40">Oct 9, 2026 &middot; 6 min read</p>
+                <h3 class="mt-2 font-serif text-lg font-semibold leading-snug group-hover:text-rust">
+                  <a href="#">Responsive design without guessing breakpoints</a>
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-cocoa/60">
+                  How I test layouts at real screen sizes instead of adding breakpoints at random.
+                </p>
+              </div>
+            </article>
+
+            <article class="group flex gap-5 py-6">
+              <div class="hidden h-20 w-28 shrink-0 overflow-hidden rounded-xl sm:block">
+                <img src="https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?auto=format&fit=crop&w=400&q=70"
+                  alt="Person writing code" class="h-full w-full object-cover">
+              </div>
+              <div class="flex-1">
+                <p class="text-xs font-medium uppercase tracking-wider text-cocoa/40">Oct 2, 2026 &middot; 5 min read</p>
+                <h3 class="mt-2 font-serif text-lg font-semibold leading-snug group-hover:text-rust">
+                  <a href="#">What I learned from rebuilding my portfolio</a>
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-cocoa/60">
+                  A short reflection on starting over, cutting extra sections and keeping the page honest.
+                </p>
+              </div>
+            </article>
+
+            <article class="group flex gap-5 py-6">
+              <div class="hidden h-20 w-28 shrink-0 overflow-hidden rounded-xl sm:block">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=70"
+                  alt="People working together at a table" class="h-full w-full object-cover">
+              </div>
+              <div class="flex-1">
+                <p class="text-xs font-medium uppercase tracking-wider text-cocoa/40">Sep 24, 2026 &middot; 4 min read</p>
+                <h3 class="mt-2 font-serif text-lg font-semibold leading-snug group-hover:text-rust">
+                  <a href="#">Asking for feedback without feeling defensive</a>
+                </h3>
+                <p class="mt-2 text-sm leading-relaxed text-cocoa/60">
+                  A few questions that make design reviews more useful and a lot less stressful.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <a href="#" class="mt-4 inline-block rounded-full border border-cocoa px-6 py-3 text-sm font-semibold transition hover:bg-cocoa hover:text-white">
+            Read older posts
+          </a>
+        </div>
+
+        <!-- About the author -->
+        <aside class="h-fit rounded-2xl border border-sand bg-white p-7">
+          <p class="text-xs font-semibold uppercase tracking-[0.25em] text-rust">About the writer</p>
+          <div class="mt-5 flex items-center gap-4">
+            <div class="flex h-14 w-14 items-center justify-center rounded-full bg-sand font-serif text-xl font-bold text-rust">FN</div>
+            <div>
+              <p class="font-serif text-lg font-semibold">Fouja Nazgul</p>
+              <p class="text-sm text-cocoa/50">Frontend developer</p>
+            </div>
+          </div>
+          <p class="mt-4 text-sm leading-relaxed text-cocoa/60">
+            I&rsquo;m learning in public and writing down the things I wish someone had explained
+            to me earlier. This journal is where those notes live.
+          </p>
+          <a href="#" class="mt-5 inline-block text-sm font-semibold text-rust hover:underline">More about me &rarr;</a>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section id="newsletter" class="bg-cocoa py-16 text-white sm:py-20">
+    <div class="mx-auto max-w-3xl px-5 text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-orange-300">Stay in the loop</p>
+      <h2 class="mt-3 font-serif text-3xl font-semibold sm:text-4xl">One useful email, every other week</h2>
+      <p class="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/60 sm:text-base">
+        New posts, small code tips and links worth reading. No spam, and you can leave whenever you like.
+      </p>
+
+      <form class="mx-auto mt-8 flex max-w-md flex-col gap-3 sm:flex-row">
+        <label for="newsletter-email" class="sr-only">Email address</label>
+        <input id="newsletter-email" type="email" placeholder="you@example.com" required
+          class="w-full rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-orange-300 focus:bg-white/15">
+        <button type="submit"
+          class="shrink-0 rounded-full bg-rust px-7 py-3 text-sm font-semibold text-white transition hover:bg-orange-600">
+          Subscribe
+        </button>
+      </form>
+
+      <p class="mt-4 text-xs text-white/40">I respect your inbox. Unsubscribe at any time.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-sand bg-paper py-10">
+    <div class="mx-auto max-w-6xl px-5">
+      <div class="flex flex-col items-center gap-8 md:flex-row md:justify-between">
+        <div class="text-center md:text-left">
+          <a href="#top" class="font-serif text-xl font-semibold">The Dev Journal</a>
+          <p class="mt-2 text-sm text-cocoa/50">Notes on frontend, design and learning in public.</p>
+        </div>
+
+        <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-cocoa/60">
+          <a href="#top" class="hover:text-rust">Home</a>
+          <a href="#featured" class="hover:text-rust">Featured</a>
+          <a href="#categories" class="hover:text-rust">Categories</a>
+          <a href="#recent" class="hover:text-rust">Recent posts</a>
+          <a href="#newsletter" class="hover:text-rust">Subscribe</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="https://github.com/Fouja" aria-label="GitHub"
+            class="flex h-10 w-10 items-center justify-center rounded-full bg-sand transition hover:bg-rust hover:text-white">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.83.58A12 12 0 0 0 12 .5Z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="LinkedIn"
+            class="flex h-10 w-10 items-center justify-center rounded-full bg-sand transition hover:bg-rust hover:text-white">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.7 8.65 22 10.7 22 14.1V21h-4v-6.1c0-1.46-.03-3.34-2.04-3.34-2.04 0-2.35 1.6-2.35 3.24V21H9V9Z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="X"
+            class="flex h-10 w-10 items-center justify-center rounded-full bg-sand transition hover:bg-rust hover:text-white">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.23l-4.88-6.38L6.5 22H3.35l7.24-8.28L1 2h6.38l4.42 5.84L18.9 2Zm-1.1 17.84h1.73L7.28 5.08H5.43L17.8 19.84Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-8 border-t border-sand pt-6 text-center text-xs text-cocoa/40">
+        &copy; 2026 The Dev Journal. Built with Tailwind CSS.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = !mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden");
+      menuBtn.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => mobileMenu.classList.add("hidden"));
+    });
+  </script>
+
+</body>
+</html>
